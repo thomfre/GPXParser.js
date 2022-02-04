@@ -168,6 +168,9 @@ gpxParser.prototype.parse = function (gpxstring) {
             let time = keepThis.getElementValue(trkpt, "time");
             pt.time = time == null ? null : new Date(time);
 
+            let floatValueSpeed = parseFloat(keepThis.getElementValue(trkpt, "speed")); 
+            pt.speed = isNaN(floatValueSpeed) ? null : floatValueSpeed;
+
             trackpoints.push(pt);
         }
         track.distance  = keepThis.calculDistance(trackpoints);
