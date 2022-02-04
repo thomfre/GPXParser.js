@@ -49,6 +49,7 @@ export type Point = {
   lon: number
   ele: number
   time: Date
+  speed: number
 }
 
 export type Distance = {
